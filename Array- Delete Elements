@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main() {
+    int a[50],pos,size,i;
+    printf("Enter size of array -> ");
+    scanf("%d",&size);
+    printf("Enter elements of array -> ");
+    
+    for(i=0;i<size;i++) {
+        
+    scanf("%d",&a[i]);
+}// till now only array input 
+
+// from here array position and then deletion
+
+printf("Enter from which position deletion is required -> ");
+scanf("%d",&pos);
+// looping through array and shifting one bit based on the position.
+// a[2] = a[3] so one bit shift and equation is a[i] = a[i+1]
+
+if(pos<=0 || pos>size) {
+    printf("Invalid position chosen, restricted only to entered size of array ");
+}
+else {
+    for(i=pos-1;i<size-1;i++) {
+        a[i] = a[i+1];
+    }
+    size--;
+}
+// printing array after deletion 
+printf("Your array after deletion is -> ");
+for(i=0;i<size;i++) {
+    printf("%d ",a[i]);
+}
+    return 0;
+}
